@@ -1,0 +1,40 @@
+[
+  {
+    "id": "litumba",
+    "title": "Litumba",
+    "description": "A centralized online platform for members of the Bakweri tribe in Cameroon to connect, share, and grow socially and economically.",
+    "techStack": ["Next.js", "Tailwind CSS", "MongoDB"],
+    "liveUrl": "https://litumba-client.vercel.app",
+    "status": "Completed",
+    "projectType": "Client Project",
+    "order": 1
+  },
+  {
+    "id": "ndolo",
+    "title": "Ndolo",
+    "description": "An online dating platform for Cameroonians living abroad, designed to help them find partners who share their cultural morals and values.",
+    "techStack": ["React.js", "Node.js", "MongoDB"],
+    "status": "No Longer Accessible",
+    "projectType": "Personal",
+    "order": 2
+  },
+  {
+    "id": "mustardseed",
+    "title": "MustardSeed Project Tracker",
+    "description": "Construction project management tool enabling comprehensive management of projects, materials, finances, and equipment for MustardSeed Constructions teams.",
+    "techStack": ["Next.js"],
+    "status": "Completed",
+    "projectType": "Proprietary software",
+    "order": 3
+  },
+  {
+    "id": "portfolio-v1",
+    "title": "Personal Website",
+    "description": "Personal platform showcasing projects, skills, and professional capabilities.",
+    "techStack": ["Next.js", "Tailwind CSS", "Vercel"],
+    "liveUrl": "https://mawit-com.vercel.app",
+    "status": "Completed",
+    "projectType": "Personal",
+    "order": 4
+  }
+]

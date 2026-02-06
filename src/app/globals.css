@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-border-primary: var(--border-primary);
+
+  --font-sans: "Inter", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    
+    --background-primary: #ffffff;
+    --background-secondary: #f5f5f5;
+    --text-primary: #0a0a0a;
+    --text-secondary: #666666;
+    --accent-primary: #3b82f6;
+    --accent-hover: #60a5fa;
+    --border-primary: #e5e5e5;
+  }
+
+  .dark {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+
+    --background-primary: #0a0a0a;
+    --background-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-primary: #3b82f6;
+    --accent-hover: #60a5fa;
+    --border-primary: #2a2a2a;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
