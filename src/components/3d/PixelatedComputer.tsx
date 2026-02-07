@@ -6,7 +6,7 @@ import { Float, PerspectiveCamera, useGLTF, Stage, Center, OrbitControls } from 
 import * as THREE from 'three';
 
 const Model = () => {
-    const { scene } = useGLTF('/3d/retro-desktop.glb');
+    const { scene } = useGLTF('/3d/monitor.glb');
     const groupRef = useRef<THREE.Group>(null);
 
     // Mouse parallax effect (only when not interacting via controls)
@@ -75,9 +75,9 @@ const CustomControls = () => {
 export default function PixelatedComputer() {
     return (
         <div className="w-full h-[450px] lg:h-[650px] cursor-grab active:cursor-grabbing  overflow-hidden">
-            <Canvas dpr={[1, 1.5]} gl={{ antialias: false, powerPreference: "high-performance" }}>
+            <Canvas dpr={[1, 2]} gl={{ antialias: true, powerPreference: "high-performance" }}>
                 <Suspense fallback={null}>
-                    <PerspectiveCamera makeDefault position={[3, 3, 5]} fov={35} />
+                    <PerspectiveCamera makeDefault position={[-30, 0, 5]} fov={35} />
 
                     <Stage
                         intensity={0.4}
