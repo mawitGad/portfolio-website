@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, Suspense, useEffect } from 'react';
+import { useRef, Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float, PerspectiveCamera, useGLTF, Stage, Center, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
@@ -73,8 +73,50 @@ const CustomControls = () => {
 };
 
 export default function PixelatedComputer() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Listen for model load completion
+        const checkModelLoaded = () => {
+            // Give a small delay to ensure smooth transition
+            setTimeout(() => setIsLoading(false), 300);
+        };
+
+        // Model is preloaded, so set a timeout as fallback
+        const timer = setTimeout(checkModelLoaded, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="w-full h-[450px] lg:h-[650px] cursor-grab active:cursor-grabbing  overflow-hidden">
+        <div className="w-full h-[450px] lg:h-[650px] cursor-grab active:cursor-grabbing overflow-hidden relative">
+            {/* Loading Overlay */}
+            {isLoading && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-background-secondary/30 rounded-lg backdrop-blur-sm">
+                    <div className="relative w-64 h-64 lg:w-80 lg:h-80">
+                        {/* Animated shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-primary/10 to-transparent animate-[shimmer_2s_ease-in-out_infinite]"
+                            style={{
+                                animation: 'shimmer 2s ease-in-out infinite',
+                                backgroundSize: '200% 100%'
+                            }} />
+
+                        {/* Monitor outline skeleton */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-48 h-32 lg:w-56 lg:h-40 border-4 border-border-primary rounded-lg animate-pulse">
+                                <div className="w-full h-3/4 bg-background-secondary" />
+                                <div className="w-full h-1/4 bg-border-primary" />
+                            </div>
+                        </div>
+
+                        {/* Loading text */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-text-secondary text-sm animate-pulse">
+                            Loading 3D Model...
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <Canvas dpr={[1, 2]} gl={{ antialias: true, powerPreference: "high-performance" }}>
                 <Suspense fallback={null}>
                     <PerspectiveCamera makeDefault position={[-30, 0, 5]} fov={35} />
@@ -91,6 +133,9 @@ export default function PixelatedComputer() {
                     <CustomControls />
                 </Suspense>
             </Canvas>
+
+            {/* Mobile Touch preventer only appears when screen < 1024 */}
+            <div className="absolute inset-0 bg-transparent min-[1024px]:hidden" />
         </div>
     );
 }

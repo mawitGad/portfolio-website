@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from 'react-hot-toast';
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://mawit.dev'),
+    metadataBase: new URL(process.env.BASE_URL || 'https://mawit.dev'),
     title: {
         default: "Mawit Bikom Gad | Full-Stack Web Developer",
         template: "%s | Mawit Bikom Gad"
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://mawit.dev",
+        url: process.env.BASE_URL || "https://mawit.dev",
         title: "Mawit Bikom Gad | Full-Stack Web Developer",
         description: "Personal portfolio of Mawit Bikom Gad. Specialized in building exceptional digital experiences.",
         siteName: "Mawit Bikom Gad Portfolio",
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Mawit Bikom Gad | Full-Stack Web Developer",
         description: "Personal portfolio of Mawit Bikom Gad. Specialized in building exceptional digital experiences.",
-        creator: "@mawit", // Placeholder
+        creator: "@MawitGad",
         images: ['/images/personal-website-thumbnail.png'],
     },
     robots: {
@@ -50,8 +52,6 @@ export const metadata: Metadata = {
         },
     },
 };
-
-import { Toaster } from 'react-hot-toast';
 
 // ... existing code ...
 
