@@ -21,8 +21,8 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: process.env.BASE_URL || "https://mawit.dev",
-        title: "Mawit Bikom Gad | Full-Stack Web Developer",
-        description: "Personal portfolio of Mawit Bikom Gad. Specialized in building exceptional digital experiences.",
+        title: "I Build Web Apps That Drive Revenue | Mawit Bikom Gad",
+        description: "Custom web solutions that convert visitors into customers. Specialized in high-performance React/Next.js apps for growing businesses.",
         siteName: "Mawit Bikom Gad Portfolio",
         images: [
             {
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Mawit Bikom Gad | Full-Stack Web Developer",
-        description: "Personal portfolio of Mawit Bikom Gad. Specialized in building exceptional digital experiences.",
+        title: "I Build Web Apps That Drive Revenue | Mawit Bikom Gad",
+        description: "Custom web solutions that convert visitors into customers. Specialized in high-performance React/Next.js apps for growing businesses.",
         creator: "@MawitGad",
         images: ['/images/personal-website-thumbnail.png'],
     },
