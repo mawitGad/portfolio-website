@@ -7,12 +7,15 @@ import { SiHashnode } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
+// Read contact email from env (client-side). Keep fallback to avoid breaking dev builds.
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'mawitgaddev@gmail.com';
+
 const contactInfo = [
     {
         icon: <FiMail className="w-6 h-6" />,
         label: "Email",
-        value: "mawitgaddev@gmail.com",
-        href: "mailto:mawitgaddev@gmail.com"
+        value: CONTACT_EMAIL,
+        href: `mailto:${CONTACT_EMAIL}`
     },
     {
         icon: <FiPhone className="w-6 h-6" />,
