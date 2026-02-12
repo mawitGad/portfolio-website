@@ -32,7 +32,7 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-    { icon: <FiLinkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mawit-bikom-754558224" },
+    { icon: <FiLinkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/mawit-gad-754558224/" },
     { icon: <SiHashnode className="w-5 h-5" />, href: "https://mawit.hashnode.dev" },
     { icon: <FiGithub className="w-5 h-5" />, href: "https://github.com/mawitGad" },
 ];
